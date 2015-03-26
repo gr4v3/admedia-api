@@ -8,7 +8,7 @@ class echoServer extends WebSocketServer {
   
   protected function process ($user, $message) {
     $this->send($user,$message);
-    $handle = fopen('enquiries.txt', 'a+');
+    $handle = fopen('enquiries_'.date('Y-m-d').'.txt', 'a+');
     fwrite($handle, $message);
     fclose($handle);
   }
