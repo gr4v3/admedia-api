@@ -4,10 +4,13 @@
 require_once('./websockets.php');
 
 class echoServer extends WebSocketServer {
-  //protected $maxBufferSize = 1048576; //1MB... overkill for an echo server, but potentially plausible for other applications.
+  protected $maxBufferSize = 10485760; //1MB... overkill for an echo server, but potentially plausible for other applications.
   
   protected function process ($user, $message) {
     $this->send($user,$message);
+    $handle = fopen('enquiries.txt', 'a+');
+    fwrite($handle, $message);
+    fclose($handle);
   }
   
   protected function connected ($user) {

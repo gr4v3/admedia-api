@@ -61,12 +61,10 @@ function quit(){
 		socket=null;
 	}
 }
-
 function reconnect() {
 	quit();
 	init();
 }
-
 // Utilities
 function $(id){ return document.getElementById(id); }
 function log(msg){ $("log").innerHTML+="<br>"+msg; }
@@ -77,7 +75,7 @@ function onkey(event){ if(event.keyCode==13){ send(); } }
 <body onload="init()">
 <h3>WebSocket v2.00</h3>
 <div id="log"></div>
-<input id="msg" type="textbox" onkeypress="onkey(event)"/>
+<input id="msg" type="text" onkeypress="onkey(event)" />
 <button onclick="send()">Send</button>
 <button onclick="quit()">Quit</button>
 <button onclick="reconnect()">Reconnect</button>
