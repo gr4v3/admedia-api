@@ -17,7 +17,7 @@ html,body {
 var socket;
 
 function init() {
-	var host = "ws://192.168.0.100:1234"; // SET THIS TO YOUR SERVER
+	var host = "ws://server.admedia.pt:1234"; // SET THIS TO YOUR SERVER
 	try {
 		socket = new WebSocket(host);
 		log('WebSocket - status '+socket.readyState);
