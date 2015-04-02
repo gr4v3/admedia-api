@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php
 
+if (php_sapi_name() !== 'cli') die('this can only run in cli mode!');
+
 require_once('./websockets.php');
 
 class echoServer extends WebSocketServer {
