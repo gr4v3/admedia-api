@@ -29,7 +29,7 @@ class echoServer extends WebSocketServer {
   }
 }
 
-$echo = new echoServer("192.168.0.100","1234");
+$echo = new echoServer("151.236.60.46","1234");
 
 try {
   $echo->run();
